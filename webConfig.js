@@ -5,13 +5,13 @@ const db = config.mongoURI;
 module.exports = { connectDB };
 async function connectDB() {
     try {
-        await mongoose.connect(db, {
+        await mongoose.connect('mongodb+srv://tientulac:tienhdtl123@cluster0.aqqajgy.mongodb.net/?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false,
             useCreateIndex: true
         });
-        console.log(`Connect Database ${db} successfully !!!`);
+        console.log(`Connect Database successfully !!!`);
     } catch (err) {
         console.log(err);
     }
